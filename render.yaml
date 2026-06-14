@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: splitwise-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install && npx prisma generate
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        sync: false # Render will prompt the user to input this URL
+      - key: JWT_SECRET
+        generateValue: true # Render will automatically generate a secure key for you!
