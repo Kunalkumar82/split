@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Lock, User, AlertCircle, Sparkles } from 'lucide-react';
+import { API_URL } from '../config';
 
 export default function Login({ onLoginSuccess }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -8,11 +9,6 @@ export default function Login({ onLoginSuccess }) {
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-
-  // Host URL helper
-  const API_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
-    ? 'http://localhost:5000'
-    : window.location.origin;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

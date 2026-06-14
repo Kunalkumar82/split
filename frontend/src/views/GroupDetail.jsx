@@ -23,6 +23,7 @@ import {
   Calendar
 } from 'lucide-react';
 import { formatAmount } from '../utils/format';
+import { API_URL } from '../config';
 
 export default function GroupDetail({ groupId, onBack, onSelectExpense, currentUser }) {
   const [group, setGroup] = useState(null);
@@ -85,11 +86,6 @@ export default function GroupDetail({ groupId, onBack, onSelectExpense, currentU
   const [activeCategoryFilter, setActiveCategoryFilter] = useState('All');
   const [activities, setActivities] = useState([]);
   const [activitiesLoading, setActivitiesLoading] = useState(false);
-
-  // Host URL helper
-  const API_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
-    ? 'http://localhost:5000'
-    : window.location.origin;
 
   const fetchGroupDetails = async () => {
     try {

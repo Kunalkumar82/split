@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { io } from 'socket.io-client';
 import { formatAmount } from '../utils/format';
+import { API_URL } from '../config';
 
 export default function ExpenseDetail({ expenseId, onBack, currentUser, currency }) {
   const [expense, setExpense] = useState(null);
@@ -29,11 +30,6 @@ export default function ExpenseDetail({ expenseId, onBack, currentUser, currency
   const [showLightbox, setShowLightbox] = useState(false);
   const socketRef = useRef(null);
   const messagesEndRef = useRef(null);
-
-  // Host URL helper
-  const API_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
-    ? 'http://localhost:5000'
-    : window.location.origin;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });

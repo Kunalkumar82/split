@@ -19,6 +19,7 @@ import {
   Coins
 } from 'lucide-react';
 import { formatAmount } from '../utils/format';
+import { API_URL } from '../config';
 
 export default function Dashboard({ user, onSelectGroup }) {
   const [groups, setGroups] = useState([]);
@@ -36,11 +37,6 @@ export default function Dashboard({ user, onSelectGroup }) {
   const [activeTab, setActiveTab] = useState('groups'); // groups, analytics
   const [analytics, setAnalytics] = useState(null);
   const [analyticsLoading, setAnalyticsLoading] = useState(false);
-
-  // Host URL helper
-  const API_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
-    ? 'http://localhost:5000'
-    : window.location.origin;
 
   const fetchGroups = async () => {
     try {

@@ -5,6 +5,7 @@ import Dashboard from './views/Dashboard';
 import GroupDetail from './views/GroupDetail';
 import ExpenseDetail from './views/ExpenseDetail';
 import { AlertCircle } from 'lucide-react';
+import { API_URL } from './config';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -15,11 +16,6 @@ export default function App() {
   const [activeGroupCurrency, setActiveGroupCurrency] = useState('INR');
 
 
-
-  // Host URL helper
-  const API_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
-    ? 'http://localhost:5000'
-    : window.location.origin;
 
   // Run initial authentication check on load
   useEffect(() => {
