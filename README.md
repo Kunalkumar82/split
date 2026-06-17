@@ -6,6 +6,14 @@ This version upgrades the system with five production-level features, including 
 
 ---
 
+## 🌐 Live Deployments
+
+*   **Frontend Client (Vercel):** [https://frontend-drab-gamma-e5aclp0kwg.vercel.app](https://frontend-drab-gamma-e5aclp0kwg.vercel.app)
+*   **Backend API Server (Railway):** [https://splitwise-backend-production.up.railway.app](https://splitwise-backend-production.up.railway.app)
+*   **Database:** Hosted on Neon Cloud PostgreSQL
+
+---
+
 ## 🚀 Key Features
 
 ### Core Splitwise Features
